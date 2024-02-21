@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from 'react-router-dom'
+import Home from './Components/Navbar/Home/Home'
+import Bookmarks from './Components/Navbar/Bookmarks/Bookmarks'
+import Locations from './Components/Navbar/Locations/Locations'
+import Stories from './Components/Navbar/Stories/Stories'
+import Policies from './Components/Navbar/Policies/Policies'
+import TopSocialSites from './Components/Navbar/Top Social Sites/TopSocialSites'
+import PricingPlan from './Components/Navbar/Pricing Plan/PricingPlan'
+import ContactUs from './Components/Navbar/Contact Us/ContactUs'
+import Login from './Components/Topbar/Login/Login'
+import Register from './Components/Topbar/Register/Register'
+import MainComponent from "./Main Component/MainComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <MainComponent />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/bookmarks" element={<Bookmarks />} />
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/stories" element={<Stories />} />
+        <Route path="/policies" element={<Policies />} />
+        <Route path="/top-social-sites" element={<TopSocialSites />} />
+        <Route path="/pricing-plans" element={<PricingPlan />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+      </Routes>
+      
+    </>
   );
 }
 
